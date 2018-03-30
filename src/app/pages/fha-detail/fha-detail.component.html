@@ -1,1 +1,57 @@
-{{inmueble.code}}
+<div class="spacer form2">
+  <div class="container">
+    <img class="figure-img img-fluid rounded" data-aos="flip-up" src="../../../assets/fha.JPG" style="width: 350px;">
+    <div class="row">
+      <!-- Column -->
+      <div class="col-lg-6 p-r-40" data-aos="flip-up" data-aos-duration="1200">
+        <a href="{{inmueble.linkToGo}}" target="_blank"> <h3 >FHA - {{inmueble.code}} </h3></a>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active"><img class="img-responsive" src="{{inmueble.images[0]}}"></div>
+            <div class="carousel-item" *ngFor="let img of inmueble.images"><img class="img-responsive"
+                                                                                src="{{img}}"></div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> <span
+            class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"> <span
+            class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+        </div>
+        <hr>
+
+        <h2 class="text-center text-info m-b-0">Q{{inmueble.price | number}}.00</h2>
+        <h4 class="text-center">Enganche minimo: Q{{inmueble.price*0.05 | number}}.00</h4>
+        <br>
+        <div class="text-center">
+        <button type="button" class="btn btn-md btn-danger-gradiant btn-arrow"><span>Solicitar Cotización <i
+          class="ti-arrow-right"></i></span></button>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="text-box">
+          <form class="m-t-20" data-aos="fade-left" data-aos-duration="1200">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h6>Direccion</h6>
+                <p class="mb-1">{{inmueble.address | lowercase | titlecase}}</p>
+              </li>
+              <li class="list-group-item">
+                <h6>Ambientes</h6>
+                <p class="mb-1">{{inmueble.environments | lowercase }}</p>
+              </li>
+              <li class="list-group-item">
+                <h6>Area de Terreno</h6>
+                <p class="mb-1">{{inmueble.fieldArea}} m²</p>
+                <h6>Area de Construcción</h6>
+                <p class="mb-1">{{inmueble.consArea}} m²</p>
+                <h6>Registro de la propiedad</h6>
+                <p class="mb-1">{{inmueble.propertyRegistry | lowercase | titlecase}}</p>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
