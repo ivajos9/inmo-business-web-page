@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Inmo Business GT</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Bootstrap Core CSS -->
+  <link href="assets/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- This is for the animation CSS -->
+  <link href="assets/node_modules/aos/dist/aos.css" rel="stylesheet">
+  <link href="assets/node_modules/bootstrap-touch-slider/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+  <link href="assets/node_modules/owl.carousel/dist/assets/owl.theme.green.css" rel="stylesheet">
+  <!-- This css we made it from our predefine componenet
+  we just copy that css and paste here you can also do that -->
+  <link href="assets/css/demo.css" rel="stylesheet">
+  <!-- Common style CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/yourstyle.css" rel="stylesheet">
+</head>
+<body class="">
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+  <div class="loader">
+    <div class="loader__figure"></div>
+    <p class="loader__label">Inmo Business GT</p>
+  </div>
+</div>
+
+<app-root></app-root>
+
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap popper Core JavaScript -->
+<script src="assets/node_modules/popper/dist/popper.min.js"></script>
+<script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- This is for the animation -->
+<script src="assets/node_modules/aos/dist/aos.js"></script>
+<!--Custom JavaScript -->
+<script src="assets/js/custom.min.js"></script>
+<!-- ============================================================== -->
+<!-- This page plugins -->
+<!-- ============================================================== -->
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="assets/node_modules/bootstrap-touch-slider/bootstrap-touch-slider.js"></script>
+<script type="text/javascript">
+  $('#slider10').bsTouchSlider();
+  $(".carousel .carousel-inner").swipe({
+    swipeLeft: function (event, direction, distance, duration, fingerCount) {
+      this.parent().carousel('next');
+    },
+    swipeRight: function () {
+      this.parent().carousel('prev');
+    },
+    threshold: 0
+  });
+  $('.tcards').owlCarousel({
+    loop: true,
+    margin: 30,
+    center: false,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      768: {
+        items: 2
+      },
+      1170: {
+        items: 3
+      }
+    }
+  });
+  /*******************************/
+  // this is for the testimonial 10
+  /*******************************/
+  $('.testi10').owlCarousel({
+    loop: true
+    , margin: 30
+    , nav: false
+    , dots: false
+    , autoplay: true
+    , responsiveClass: true
+    , responsive: {
+      0: {
+        items: 1
+
+      }
+      , 1650: {
+        items: 1
+      }
+    }
+  })
+</script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/portfolio.js"></script>
+</body>
+</html>

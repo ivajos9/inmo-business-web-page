@@ -1,0 +1,68 @@
+<div class="jumbotron bg-white">
+  <img class="figure-img img-fluid rounded fadeIn" src="../../../assets/fha.JPG" style="width: 350px;">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home8" role="tab"><span><i
+      class="ti-home"></i>  Listado de viviendas</span></a></li>
+
+    <li class="man-container">
+      <select class="custom-select" [(ngModel)]="seleccionado" (ngModelChange)="getForMunicipio()">
+        <option value="">Filtrar por departamento...</option>
+        <option *ngFor="let x of municipios" value="{{x.name}}">{{x.name}}</option>
+      </select>
+    </li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content tabcontent-border ">
+    <small class="man-container">Presiona <strong>cotizar</strong> para ver imagenes</small>
+    <div class="tab-pane active" id="home8" role="tabpanel">
+      <div class="p-20">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover fadeIn">
+            <thead class="bg-secondary text-white">
+            <tr class="text-center">
+              <th scope="col">Código</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Ambientes</th>
+              <th scope="col">Registro de Propiedad</th>
+              <th scope="col">Area de Terreno</th>
+              <th scope="col">Area de Construcción</th>
+              <th scope="col">Disponibilidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fha of fhaDisp" class="fadeIn">
+              <th scope="row" class="text-center">
+                <a [href]="fha.linkToGo">{{fha.code}}</a>
+              </th>
+              <td>
+                <small>{{fha.address}}</small>
+              </td>
+              <td>
+                <small>Q.{{fha.price | number}}.00</small>
+              </td>
+              <td>
+                <small>{{fha.environments}}</small>
+              </td>
+              <td>
+                <small>{{fha.propertyRegistry}}</small>
+              </td>
+              <td>
+                <small>{{fha.fieldArea}} m²</small>
+              </td>
+              <td>
+                <small>{{fha.consArea}} m²</small>
+              </td>
+              <td *ngIf="fha.available">
+                <small><h6 class="text-green">Disponible</h6></small>
+                <button type="button" class="btn btn-outline-success" (click)="goToDetail(fha.code)">Cotizar</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

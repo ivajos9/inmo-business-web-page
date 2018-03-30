@@ -1,0 +1,21 @@
+/*
+Template Name: Wrapkit
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*==============================================================
+ You can write your style here and overwrite our style
+ ============================================================== */
+.main-container{
+  margin-top: 40px;
+}
+
+.man-container{
+  margin-left: 30px;
+}
+
+.imgforce{
+  width: 60px !important;
+  height: 50px !important;
+}
