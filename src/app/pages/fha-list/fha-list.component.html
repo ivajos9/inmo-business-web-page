@@ -33,7 +33,7 @@
             <tbody>
             <tr *ngFor="let fha of fhaDisp" class="fadeIn">
               <th scope="row" class="text-center">
-                <a [href]="fha.linkToGo">{{fha.code}}</a>
+                <a [href]="fha.linkToGo" target="_blank" class="text-primary">{{fha.code}}</a>
               </th>
               <td>
                 <small>{{fha.address}}</small>

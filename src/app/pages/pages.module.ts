@@ -20,6 +20,7 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProyectosListComponent } from './proyectos-list/proyectos-list.component';
 import { ProyectosDetailComponent } from './proyectos-detail/proyectos-detail.component';
+import { FaqsFhaComponent } from './faqs-fha/faqs-fha.component';
 
 @NgModule ({
   declarations: [
@@ -33,13 +34,12 @@ import { ProyectosDetailComponent } from './proyectos-detail/proyectos-detail.co
     OurServicesComponent,
     ContactComponent,
     ProyectosListComponent,
-    ProyectosDetailComponent
+    ProyectosDetailComponent,
+    FaqsFhaComponent
   ],
   exports: [
     HomeComponent,
-    PagesComponent,
-    FhaListComponent,
-    FhaDetailComponent
+    PagesComponent
   ],
   imports: [
     CommonModule,
