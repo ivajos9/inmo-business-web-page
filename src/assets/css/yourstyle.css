@@ -19,3 +19,37 @@ File: scss
   width: 60px !important;
   height: 50px !important;
 }
+
+.contact2 {
+  padding: 60px 0;
+  margin-bottom: 170px;
+  background-position: center top; }
+.contact2 .bg-image {
+  background-size: cover;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+.contact2 .detail-box {
+  padding: 40px; }
+.contact2 .detail-box .round-social {
+  margin-top: 100px; }
+.contact2 .detail-box .round-social.light a {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  margin: 0 7px;
+  height: 49px;
+  width: 49px;
+  line-height: 49px; }
+.contact2 .contact-container {
+  position: relative;
+  top: 200px; }
+.contact2 .contact-container .links a {
+  color: #8d97ad; }
+
+
+.bg-sec-p {
+  background-color: #263238;
+}

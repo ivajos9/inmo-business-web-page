@@ -6,7 +6,7 @@
 
     <li class="man-container">
       <select class="custom-select" [(ngModel)]="seleccionado" (ngModelChange)="getForMunicipio()">
-        <option value="">Filtrar por departamento...</option>
+        <option value="">Filtrar por municipio...</option>
         <option *ngFor="let x of municipios" value="{{x.name}}">{{x.name}}</option>
       </select>
     </li>
