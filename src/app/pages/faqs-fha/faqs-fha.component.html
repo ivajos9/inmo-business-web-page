@@ -86,30 +86,33 @@
           <div class="col-lg-8">
             <div class="contact-box p-r-40">
               <h4 class="title">Contactanos</h4>
-              <form data-aos="fade-left" data-aos-duration="1200">
+              <div class="alert alert-success" role="alert" *ngIf="sendSuccess">
+                This is a success alert with. Give it a click if you like.
+              </div>
+              <form  #formQuestion="ngForm" data-aos="fade-left" data-aos-duration="1200" (ngSubmit)="onSubmit()" id="form-question">
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group m-t-15">
-                      <input class="form-control" type="text" placeholder="Nombre">
+                      <input type="text" #name="ngModel" name="name" class="form-control" placeholder="Nombre" [(ngModel)]="question.name" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group m-t-15">
-                      <input class="form-control" type="email" placeholder="Correo Electronico">
+                      <input type="email" #email="ngModel" name="email" class="form-control" placeholder="Correo Electronico"  [(ngModel)]="question.email" required>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group m-t-15">
-                      <input class="form-control" type="tel" placeholder="Telefono">
+                      <input type="tel" #phone="ngModel" name="phone" class="form-control" placeholder="Telefono" [(ngModel)]="question.phone">
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group m-t-15">
-                      <textarea class="form-control" rows="3" placeholder="Mensaje"></textarea>
+                      <textarea #message="ngModel" name="message" rows="3" class="form-control"placeholder="Mensaje" [(ngModel)]="question.message" required></textarea>
                     </div>
                   </div>
                   <div class="col-lg-12">
-                    <button type="submit" class="btn btn-danger-gradiant m-t-20 btn-arrow"><span> Enviar <i
+                    <button type="submit" [disabled]="!formQuestion.form.valid" class="btn btn-danger-gradiant m-t-20 btn-arrow"><span> Enviar <i
                       class="ti-arrow-right"></i></span></button>
                   </div>
                 </div>

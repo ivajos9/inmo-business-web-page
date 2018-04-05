@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FhaService} from './fha.service';
-import {ClientsService} from './clients.service';
+import {QuestionsService} from './questions.service';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import {ClientsService} from './clients.service';
   declarations: [],
   providers: [
     FhaService,
-    ClientsService
+    QuestionsService
   ]
 })
 export class ServiceModule { }

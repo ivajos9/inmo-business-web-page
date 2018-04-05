@@ -10,6 +10,6 @@ export class FhaImmovable {
     public price,
     public propertyRegistry,
     public city,
-    public images:any
+    public images: any
   ) {}
 }

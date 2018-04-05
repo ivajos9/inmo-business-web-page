@@ -13,6 +13,7 @@ export class FhaDetailComponent implements OnInit {
   inmueble: FhaImmovable;
   images: string[] = [];
 
+
   constructor(private activatedRoute: ActivatedRoute, private _router: Router, public fhaService: FhaService) {
     window.scrollTo(0, 0);
     this.activatedRoute.params.subscribe(params => {
