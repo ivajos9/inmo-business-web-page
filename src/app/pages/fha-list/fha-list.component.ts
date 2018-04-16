@@ -19,6 +19,7 @@ export class FhaListComponent implements OnInit {
 
 
   constructor(public fhaService: FhaService, private _router: Router) {
+    window.scrollTo(0, 0);
     this.fhaService.getMunicipiosList().subscribe(municipios => {
       this.municipios = municipios;
     });

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FhaService} from './fha.service';
 import {QuestionsService} from './questions.service';
+import {QuotationsService} from './quotations.service';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {QuestionsService} from './questions.service';
   declarations: [],
   providers: [
     FhaService,
-    QuestionsService
+    QuestionsService,
+    QuotationsService
   ]
 })
 export class ServiceModule { }

@@ -1,13 +1,27 @@
-<div class="spacer">
+<!-- ============================================================== -->
+<!-- Static Slider 2  -->
+<!-- ============================================================== -->
+<div class="static-slider2 spacer">
   <div class="container">
-    <div class="row justify-content-center m-b-30">
-      <div class="col-md-7 text-center">
-        <h2 class="title">Are you happy with what we offer? Grab your WrapKit Copy Now</h2>
-        <h6 class="subtitle">Yeah ! Its pretty cool about what you are offering and i starterd to feel in love with your Amazing UI Kit. I want it Yea!</h6>
+    <!-- Row  -->
+    <div class="row">
+      <!-- Column -->
+      <div class="col-md-5 align-self-center" data-aos="fade-right" data-aos-duration="1200">
+        <h1 class="title"><span class="typewrite" data-period="2000" data-type='[ "Creative", "Jquery", "Design", "Angular" ]'></span><br/>Done<span class="text-megna">.</span></h1>
+        <h6 class="subtitle">I’m John Doe, a Web & Mobile App Designer,Specialize in Website Design, Illustration & Mobile Application Work.</h6>
+        <a class="btn btn-success-gradiant btn-md btn-arrow m-t-20 m-b-10" data-toggle="collapse" href=""><span>Hire Me <i class="ti-arrow-right"></i></span></a>
+        <a class="btn btn-link btn-md btn-arrow m-t-20 m-b-10 font-medium" data-toggle="collapse" href=""><span class="underline">Check my work <i class="ti-arrow-right"></i></span></a>
+      </div>
+      <!-- Column -->
+      <div class="col-md-7 img-anim" data-aos="fade-up" data-aos-duration="2200">
+        <img src="../assets/images/sliders/static-slider/slider2/img1.jpg" alt="wrapkit" class="img-fluid m-t-20" />
       </div>
     </div>
   </div>
 </div>
+<!-- ============================================================== -->
+<!-- End Static Slider 2  -->
+<!-- ============================================================== -->
 <!-- ============================================================== -->
 <!-- Contact 2  -->
 <!-- ============================================================== -->
@@ -20,30 +34,33 @@
               <div class="col-lg-8">
                 <div class="contact-box p-40">
                   <h4 class="title">Contactanos</h4>
-                  <form>
+                  <div class="alert alert-success" role="alert" *ngIf="sendSuccess">
+                    {{messageField}}
+                  </div>
+                  <form  #formQuestion="ngForm" data-aos="fade-left" data-aos-duration="1200" (ngSubmit)="onSubmit()" id="form-question">
                     <div class="row">
                       <div class="col-lg-6">
-                        <div class="form-group m-t-20">
-                          <input class="form-control" type="text" placeholder="Nombre">
+                        <div class="form-group m-t-15">
+                          <input type="text" #name="ngModel" name="name" class="form-control" placeholder="Nombre" [(ngModel)]="question.name" required>
                         </div>
                       </div>
                       <div class="col-lg-6">
-                        <div class="form-group m-t-20">
-                          <input class="form-control" type="text" placeholder="Correo Electronico">
+                        <div class="form-group m-t-15">
+                          <input type="email" #email="ngModel" name="email" class="form-control" placeholder="Correo Electronico"  [(ngModel)]="question.email" required>
                         </div>
                       </div>
                       <div class="col-lg-6">
-                        <div class="form-group m-t-20">
-                          <input class="form-control" type="text" placeholder="Telefono">
+                        <div class="form-group m-t-15">
+                          <input type="tel" #phone="ngModel" name="phone" class="form-control" placeholder="Telefono" [(ngModel)]="question.phone" pattern="[0-9]+">
                         </div>
                       </div>
                       <div class="col-lg-12">
-                        <div class="form-group m-t-20">
-                          <input class="form-control" type="" placeholder="Mensaje">
+                        <div class="form-group m-t-15">
+                          <textarea #message="ngModel" name="message" rows="3" class="form-control"placeholder="Mensaje" [(ngModel)]="question.message" required></textarea>
                         </div>
                       </div>
                       <div class="col-lg-12">
-                        <button type="submit" class="btn btn-danger-gradiant m-t-20 btn-arrow"><span> Enviar <i
+                        <button type="submit" [disabled]="!formQuestion.form.valid" class="btn btn-danger-gradiant m-t-20 btn-arrow"><span> Enviar <i
                           class="ti-arrow-right"></i></span></button>
                       </div>
                     </div>
@@ -52,16 +69,22 @@
               </div>
               <div class="col-lg-4 bg-primary">
                 <div class="detail-box">
-                  <h5 class="text-white font-light m-b-30">ADDRESS</h5>
-                  <p class="text-white op-7">601 Sherwood Ave.
-                    <br> San Bernandino</p>
-                  <h5 class="text-white font-light m-b-30 m-t-40">CALL US</h5>
-                  <p class="text-white op-7">251 546 9442
-                    <br> 630 446 8851</p>
+                  <h5 class="text-white font-light m-b-30 m-t-40">Llamanos</h5>
+                  <p class="text-white op-7">Oficina: +502 6646-4099
+                    <br>Moviles:
+                    <br>
+                    +502 5019-4420
+                    <br>
+                    +502 5395-4040
+                  </p>
+                  <h5 class="text-white font-light m-b-30 m-t-40">Escribenos</h5>
+                  <p class="text-white op-7">Correo Electrónico: info@inmobusinessgt.com
+                    <br>Whatsapp: +502 3022-2003</p>
                   <div class="round-social light">
                     <a href="#" class="m-l-0"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class=""><i class="fa fa-twitter"></i></a>
+                    <a href="#" class=""><i class="fa fa-instagram"></i></a>
                     <a href="#" class=""><i class="fa fa-youtube-play"></i></a>
+                    <a href="#" class=""><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>

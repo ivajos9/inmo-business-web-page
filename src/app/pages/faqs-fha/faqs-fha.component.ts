@@ -10,7 +10,7 @@ import {Question} from '../../bo/Question';
 })
 export class FaqsFhaComponent implements OnInit {
   sendSuccess = false;
-  message: string = 'Gracias por Contactarnos. Te atenderemos en breve.'
+  messageField = 'Gracias por Contactarnos. Te atenderemos en breve.';
   question: Question = {
     name: null,
     email: null,
@@ -33,6 +33,5 @@ export class FaqsFhaComponent implements OnInit {
       this.question.email = null;
       this.sendSuccess = true;
     }
-
   }
 }

@@ -19,8 +19,8 @@
         </div>
         <hr>
 
-        <h2 class="text-center text-info m-b-0">Q{{inmueble.price | number}}.00</h2>
-        <h4 class="text-center">Enganche minimo: Q{{inmueble.price*0.05 | number}}.00</h4>
+        <h2 class="text-center text-info m-b-0">Q{{inmueble.price | number : '1.2-2'}}</h2>
+        <h4 class="text-center">Enganche minimo: Q{{inmueble.price * 0.05 | number : '1.2-2' }}</h4>
         <br>
         <div class="text-center">
           <button type="button" class="btn btn-md btn-danger-gradiant btn-arrow" data-toggle="modal"
@@ -66,39 +66,57 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
           aria-hidden="true">&times;</span></button>
       </div>
-      <small> Requerimos estos datos para tu cotización</small>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label class="control-label">Codigo de Vivienda</label>
-            <input type="text" class="form-control" id="recipient-code" value="{{inmueble.code}}" disabled>
-          </div>
-          <div class="form-group">
-            <label class="control-label">Nombre y Apellido</label>
-            <input type="text" class="form-control" id="recipient-name1" >
-          </div>
-          <div class="form-group">
-            <label class="control-label">Correo Electronico</label>
-            <input type="email" class="form-control" id="recipient-mail">
-          </div>
-          <div class="form-group">
-            <label class="control-label">Telefono</label>
-            <input type="tel" class="form-control" id="recipient-tel">
-          </div>
-          <div class="form-group">
-            <label class="control-label">Enganche</label>
-            <input type="text" class="form-control" id="recipient-eng" value="Q.{{inmueble.price*0.05 | number}}.00">
-          </div>
-          <div class="form-group">
-            <label class="control-label">Mensaje</label>
-            <textarea class="form-control" id="message-text1"></textarea>
-          </div>
-        </form>
+      <div *ngIf="!sendSuccess">
+        <div class="text-center">
+          <small> Requerimos estos datos para tu cotización</small>
+        </div>
+        <div class="modal-body">
+          <form #fromQuotation="ngForm" (ngSubmit)="onSubmit()" id="form-quotation">
+            <div class="form-group">
+              <label class="control-label">Codigo de Vivienda</label>
+              <input #codigo="ngModel" name="codigo" name="code" type="text" class="form-control" id="recipient-code"
+                     [(ngModel)]="quotation.code" disabled required>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Nombre y Apellido</label>
+              <input type="text" #name="ngModel" name="name" class="form-control" id="recipient-name"
+                     [(ngModel)]="quotation.name" required>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Correo Electronico</label>
+              <input type="email" #email="ngModel" name="email" class="form-control" id="recipient-mail"
+                     [(ngModel)]="quotation.email" required>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Telefono</label>
+              <input type="tel" #tel="ngModel" name="tel" class="form-control" id="recipient-tel"
+                     [(ngModel)]="quotation.phone" required>
+            </div>
+            <div class="form-group"><label class="control-label">Enganche</label>
+              <div class="input-group">
+                <span class="input-group-addon">Q</span>
+                <input type="text" #down="ngModel" name="down" class="form-control" id="recipient-eng"
+                       [(ngModel)]="quotation.downPayment">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Mensaje</label>
+              <textarea #message="ngModel" name="message" class="form-control" id="message-text"
+                        [(ngModel)]="quotation.message"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-inverse" data-dismiss="modal">Cerrar</button>
+              <button type="submit" [disabled]="!fromQuotation.form.valid" class="btn btn-primary">Solicitar</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-inverse" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Solicitar</button>
+      <div *ngIf="sendSuccess">
+        <p class="text-center">Tu cotización ha sido enviada correctamente. </p>
+        <p class="text-center">Nuestros asesores te estaran contactando a la brevedad.</p>
       </div>
+
     </div>
   </div>
 </div>
+
